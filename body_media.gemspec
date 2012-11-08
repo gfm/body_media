@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Tim Payne"]
   gem.email         = ["tim@fitorbit.com"]
   gem.description   = %q{Body Media API wrapper}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.summary       = %q{Body Media API wrapper}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
