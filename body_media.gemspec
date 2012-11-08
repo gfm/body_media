@@ -2,9 +2,9 @@
 require File.expand_path('../lib/body_media/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["TODO: Write your name"]
+  gem.authors       = ["Tim Payne"]
   gem.email         = ["tim@fitorbit.com"]
-  gem.description   = %q{TODO: Write a gem description}
+  gem.description   = %q{Body Media API wrapper}
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = ""
 
