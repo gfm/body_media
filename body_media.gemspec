@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = BodyMedia::VERSION
 
   gem.add_runtime_dependency 'oauth', '~> 0.4'
+  gem.add_runtime_dependency 'multi_json', '~> 1.3'
 end

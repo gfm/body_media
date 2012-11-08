@@ -1,6 +1,6 @@
 require 'date_core'
 require 'oauth'
-require 'json'
+require 'multi_json'
 require 'body_media/summary'
 
 module BodyMedia
@@ -27,7 +27,7 @@ module BodyMedia
       date_format = "%Y%m%d"
       
       response = token.get "/v2/json/summary/day/#{start_date.strftime(date_format)}/#{end_date.strftime(date_format)}?api_key=#{BodyMedia.consumer_key}"
-      response_hash = JSON.parse(response.body)
+      response_hash = MultiJson.decode(response.body)
 
       BodyMedia::Summary.new(response_hash)
     end
