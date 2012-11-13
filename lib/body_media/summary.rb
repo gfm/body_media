@@ -13,17 +13,6 @@ module BodyMedia
       self.last_sync = @summary['lastSync']
       self.start_date = Date.parse(@summary['startDate'])
       self.end_date = Date.parse(@summary['endDate'])
-
-      # start_date.upto(end_date).each do |date|
-      #   day = BodyMedia::Day.new(date)
-
-      #   [:sleep, :consumption, :burn, :step].each do |service|
-      #     data = summary[service.to_s.camelize(:lower)]['days'].find {|summary_day| Date.parse(summary_day['date']) == date}
-      #     day.send(service).update(data)
-    #   end
-
-      #   @days << day
-      # end
     end
 
     def date_range
