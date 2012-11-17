@@ -6,16 +6,22 @@ require 'body_media/summary'
 module BodyMedia
   class Client
     def initialize(token, secret)
-      consumer = OAuth::Consumer.new(BodyMedia.consumer_key, BodyMedia.consumer_secret,
-        { :site => "http://api.bodymedia.com",
-          :scheme => :header
+      @consumer = OAuth::Consumer.new(BodyMedia.consumer_key, BodyMedia.consumer_secret,
+        { :site => "https://api.bodymedia.com",
+          :scheme => :header,
+          :access_token_path  => "/oauth/access_token?api_key=#{BodyMedia.consumer_key}"
         })
 
-      @access_token = OAuth::AccessToken.from_hash(consumer, {oauth_token: token, oauth_token_secret: secret})
+      @access_token = OAuth::AccessToken.from_hash(@consumer, {oauth_token: token, oauth_token_secret: secret})
     end
 
     def token
       @access_token
+    end
+
+    def exchange_token
+      new_token = @consumer.get_access_token(token)
+      @access_token = new_token
     end
 
     def summary(start_date, end_date = nil)
